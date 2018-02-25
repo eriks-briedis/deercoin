@@ -1,3 +1,6 @@
+require('dotenv').config();
+const crypto = require('crypto');
+
 class Blockchain {
 
     constructor () {
@@ -8,6 +11,8 @@ class Blockchain {
         this.newTransaction = this.newTransaction.bind(this);
         this.lastBlock = this.lastBlock.bind(this);
         this.proofOfWork = this.proofOfWork.bind(this);
+
+        this.newBlock(100, 1);
     }
 
     /**
